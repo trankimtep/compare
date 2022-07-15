@@ -1,0 +1,4 @@
+atm :
+  moneyAtm: "1000"
+logging:
+  file: src/main/resources/app.log

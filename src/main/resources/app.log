@@ -1,0 +1,25 @@
+2022-07-14 16:13:48.044  INFO 38850 --- [main] com.sapo.edu.demo.DemoApplication        : Starting DemoApplication on tep-Latitude-E5570 with PID 38850 (/home/tep/Downloads/xxx/ex04/target/classes started by tep in /home/tep/Downloads/xxx/ex04)
+2022-07-14 16:13:48.049  INFO 38850 --- [main] com.sapo.edu.demo.DemoApplication        : No active profile set, falling back to default profiles: default
+2022-07-14 16:13:48.509  INFO 38850 --- [main] com.sapo.edu.demo.DemoApplication        : Started DemoApplication in 0.793 seconds (JVM running for 1.04)
+2022-07-14 16:13:48.510  INFO 38850 --- [main] app.log                                  : MENU:
+2022-07-14 16:13:48.511  INFO 38850 --- [main] app.log                                  : 1:Rút tiền
+2022-07-14 16:13:48.511  INFO 38850 --- [main] app.log                                  : 2:Nạp tiền
+2022-07-14 16:14:06.123  INFO 38850 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-07-14 16:14:06.135 ERROR 38850 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:784) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:765) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at com.sapo.edu.demo.DemoApplication.main(DemoApplication.java:24) ~[classes/:na]
+Caused by: java.lang.NullPointerException: null
+	at java.base/java.math.BigDecimal.compareTo(BigDecimal.java:3065) ~[na:na]
+	at com.sapo.edu.demo.BidvAtm.withDraw(BidvAtm.java:38) ~[classes/:na]
+	at com.sapo.edu.demo.DemoApplication.run(DemoApplication.java:38) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:781) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	... 5 common frames omitted
+

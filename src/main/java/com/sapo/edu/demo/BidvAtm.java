@@ -1,11 +1,29 @@
 package com.sapo.edu.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 
+@Component
+@ConfigurationProperties(prefix = "atm")
 public class BidvAtm implements Atm {
-    private BigDecimal moneyAtm = new BigDecimal(1000000);
+    private BigDecimal moneyAtm;
 
-    private Printer printer = new PrinterConsole();
+    public BigDecimal getMoneyAtm() {
+
+        return moneyAtm;
+    }
+
+    public void setMoneyAtm(BigDecimal moneyAtm) {
+
+        this.moneyAtm = moneyAtm;
+    }
+    @Qualifier("printerFile")
+    @Autowired
+    private Printer printer ;
 
     @Override
     public void withDraw(Customer customer, BigDecimal amount) {
@@ -29,7 +47,7 @@ public class BidvAtm implements Atm {
 
     @Override
     public void printCurrentMoney() {
-        printer.printMessage("Current ATM money is " + moneyAtm.toString());
+        printer.printMessage("Current ATM money is " + moneyAtm);
     }
 
     @Override
@@ -46,6 +64,6 @@ public class BidvAtm implements Atm {
 
     @Override
     public void displayCustomerInfo(Customer customer) {
-        printer.printCustoner(customer);
+        printer.printCustomer(customer);
     }
 }
